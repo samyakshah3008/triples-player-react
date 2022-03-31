@@ -1,11 +1,19 @@
 import "./App.css";
-import logo from "./logo.png";
-
+import LandingPage from "./pages/landingpage/LandingPage";
+import {Routes, Route} from "react-router-dom"
+import Navbar from "./components/navbar/Navbar";
 function App() {
+
   return (
     <div className="App">
-     <h1>Main</h1>
-     <h1>From dev</h1>
+    <Routes>
+      <Route path="/" element = {<LandingPage/>}></Route>
+      <Route path="/navbar" element = {<Navbar/>}></Route>
+
+
+    </Routes>
+
+
          </div>
   );
 }
