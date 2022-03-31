@@ -33,3 +33,7 @@
     font-size: 1.1rem;
     cursor: pointer;
 }
+
+.watch-now-btn:hover{
+    background-color: var(--primary-hover);
+}
