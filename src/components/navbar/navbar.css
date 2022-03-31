@@ -20,3 +20,7 @@
     cursor: pointer;
 
 }
+
+.login-btn:hover{
+    background-color: var(--primary-hover);
+}
