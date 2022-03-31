@@ -1,0 +1,22 @@
+.nav-container{
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+}
+
+.nav-logo{
+    color: var(--white-text);
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.login-btn{
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--white-text);
+    border-radius: 10rem;
+    padding: .8rem 2.6rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+
+}
