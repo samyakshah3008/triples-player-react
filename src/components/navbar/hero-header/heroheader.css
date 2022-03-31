@@ -1,0 +1,35 @@
+.hero-container{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    color: var(--white-text);
+    text-align: center;
+    gap: 15px;
+}
+
+.hero-header-title{
+    font-size: 3.15rem;
+    margin: 0px;
+}
+
+.logo-name{
+    color: var(--primary-color);
+    margin: 0px;
+}
+
+.header-description{
+    font-size: 1.2rem;
+}
+
+.watch-now-btn{
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--white-text);
+    border-radius: 10rem;
+    padding: .8rem 2rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
