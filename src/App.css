@@ -1,0 +1,76 @@
+:root {
+  --primary-color: #2ea3da;
+  --background-color: #1A202C;
+  --dark-background-color: #040c1dd5;
+  --white-text: #f7f7f7;
+  --secondary-text-color: #424456;
+  --primary-hover: #0662B3;
+  --secondary-text: #909090;
+  --smooth-shadow: 0px 0px 10px 4px rgb(0 0 0 / 5%);
+  --border-color: rgba(206, 204, 204, 0.328);
+  --secondary-text: #909090;
+  --tools-bg: rgba(27, 119, 223, 0.76);
+  --video-bg: #070d1b;
+
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white-text);
+}
+
+.video-container {
+  color: var(--white-text);
+  height: 90vh;
+  display: flex;
+}
+
+.page-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.page-video-container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  justify-content: center;
+  align-items: center;
+  min-height: 8rem;
+  gap: 20px;
+  font-size: 1.2rem;
+  padding: 2rem;
+
+}
+
+.explore-btn {
+  min-width: 10%;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--white-text);
+  border-radius: 10rem;
+  padding: .8rem 2.6rem;
+  cursor: pointer;
+}
+
+.explore-btn:hover {
+  background-color: var(--primary-hover);
+
+}
+
+.icons {
+  color: var(--primary-color);
+  margin-right: 0.6rem;
+  cursor: pointer;
+}

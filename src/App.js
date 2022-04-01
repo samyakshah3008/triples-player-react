@@ -1,12 +1,28 @@
 import "./App.css";
-import logo from "./logo.png";
-
+import LandingPage from "./pages/landingpage/LandingPage";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/navbar/Navbar";
+import VideoListingPage from "./pages/video-listing-page/VideoListingPage";
+import LikePage from "./pages/likepage/LikePage";
+import HistoryPage from "./pages/historypage/HistoryPage";
+import PlaylistPage from "./pages/playlist/PlaylistPage";
+import Watchlaterpage from "./pages/watchlaterpage/Watchlaterpage";
+import LoginPage from "./pages/loginpage/LoginPage";
+import Signuppage from "./pages/signuppage/Signuppage";
 function App() {
   return (
     <div className="App">
-     <h1>Main</h1>
-     <h1>From dev</h1>
-         </div>
+      <Routes>
+        <Route path="/" element={<LandingPage />}></Route>
+        <Route path="/videolisting" element={<VideoListingPage />}></Route>
+        <Route path="/like" element={<LikePage />}></Route>
+        <Route path="/history" element={<HistoryPage />}></Route>
+        <Route path="/playlist" element={<PlaylistPage />}></Route>
+        <Route path="/watchlater" element={<Watchlaterpage />}></Route>
+        <Route path="/login" element={<LoginPage />}></Route>
+        <Route path="/signup" element={<Signuppage />}></Route>
+      </Routes>
+    </div>
   );
 }
 

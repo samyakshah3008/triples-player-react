@@ -1,0 +1,72 @@
+.login-container{
+    width: 350px;
+    height: 90vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box{
+    width: 350px;
+    height: 50vh;
+    background-color: var(--white-text);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    
+}
+
+.login-title{
+    font-weight: bolder;
+    text-align: center;
+    font-size: 1.3rem;
+    
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-field{
+    height: 2.5rem;
+    padding: 0.6rem;
+    outline-color: var(--primary-color);
+}
+
+.input-login-btn{
+    cursor: pointer;
+    height: 2.5rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--white-text);
+    transition: 0.5s;
+
+}
+
+.input-login-btn:hover{
+    background-color: var(--primary-hover);
+    transition: 0.5s;
+}
+
+.test-credential-login-link{
+    text-decoration: underline;
+    text-align: center;
+    color: var(--secondary-text-color);
+    cursor: pointer;
+}
+
+.create-account-link{
+    text-align: center;
+    cursor: pointer;
+    color: var(--secondary-text-color);
+}
+
+.create-account-link:hover{
+    color: var(--primary-color);
+    transition: 0.5s;
+}

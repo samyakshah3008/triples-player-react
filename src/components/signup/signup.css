@@ -1,0 +1,11 @@
+.signup-box{
+    width: 350px;
+    height: 60vh;
+    background-color: var(--white-text);
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    
+}
