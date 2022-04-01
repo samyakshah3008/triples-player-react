@@ -1,0 +1,61 @@
+.card-container {
+    width: 23rem;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: var(--video-bg);
+
+}
+
+.parent {
+    display: flex;
+    padding: 2rem;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.avatar-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    vertical-align: middle;
+    border-color: var(--primary-color);
+    border-style: groove;
+}
+
+.card-sub-container {
+    display: flex;
+    gap: 10px;
+    padding: 0.5rem;
+    justify-content: space-around;
+
+}
+
+.card-sub-container2 {
+    display: flex;
+    padding: 0.5rem;
+    gap: 10px;
+    color: var(--secondary-text);
+
+
+}
+
+.card-sub-container3 {
+    padding: 0.5rem;
+    color: var(--secondary-text);
+
+
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
