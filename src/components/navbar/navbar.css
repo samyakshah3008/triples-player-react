@@ -1,26 +1,26 @@
-.nav-container{
+.nav-container {
     display: flex;
     justify-content: space-around;
-    padding: 2rem;
+    padding: 1rem;
+    background-color: var(--dark-background-color);
 }
 
-.nav-logo{
+.nav-logo {
     color: var(--white-text);
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
-.login-btn{
+.login-btn {
     border: none;
     background-color: var(--primary-color);
     color: var(--white-text);
     border-radius: 10rem;
     padding: .8rem 2.6rem;
-    font-size: 1.1rem;
     cursor: pointer;
 
 }
 
-.login-btn:hover{
+.login-btn:hover {
     background-color: var(--primary-hover);
 }
