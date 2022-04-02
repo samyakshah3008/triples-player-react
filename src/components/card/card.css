@@ -1,10 +1,11 @@
 .card-container {
     width: 23rem;
-    height: 25rem;
     display: flex;
     flex-direction: column;
     gap: 5px;
     background-color: var(--video-bg);
+    border-radius: 16px;
+    cursor: pointer;
 
 }
 
@@ -14,11 +15,13 @@
     gap: 25px;
     flex-wrap: wrap;
     justify-content: center;
+    
 }
 
 .card-img {
-    object-fit: cover;
+    object-fit:contain;
     width: 100%;
+    height: 15rem;
 }
 
 .avatar-img {
@@ -34,14 +37,14 @@
 .card-sub-container {
     display: flex;
     gap: 10px;
-    padding: 0.5rem;
+    padding: 0.9rem;
     justify-content: space-around;
 
 }
 
 .card-sub-container2 {
     display: flex;
-    padding: 0.5rem;
+    padding: 0.6rem;
     gap: 10px;
     color: var(--secondary-text);
 
@@ -49,7 +52,7 @@
 }
 
 .card-sub-container3 {
-    padding: 0.5rem;
+    padding: 0.6rem;
     color: var(--secondary-text);
 
 
