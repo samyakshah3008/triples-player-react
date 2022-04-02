@@ -1,6 +1,7 @@
 .video-listing-container {
     width: 82rem;
     height: fit-content;
-
+    display: flex;
+    flex-wrap: wrap;
 
 }
