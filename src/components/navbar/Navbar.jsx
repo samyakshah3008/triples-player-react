@@ -1,17 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/auth-context";
 import "./navbar.css";
 
 export default function Navbar() {
+
+  const {user, setUser} = useAuth()
+ const navigate = useNavigate()
+
+  const logoutHandler = () => {
+    setUser({token: null})
+    navigate("/")
+  }
+
   return (
     <div>
       <nav className="nav-container">
         <Link to="/">
           <div className="nav-logo">TripleS Player</div>
         </Link>
-        <Link to="/login">
+        {user.token === null ? (<Link to="/login">
           <button className="login-btn">Login</button>
-        </Link>
+        </Link>) : (<button onClick={logoutHandler} className="login-btn">Logout</button>) }
+        
       </nav>
     </div>
   );

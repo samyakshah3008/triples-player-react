@@ -47,13 +47,7 @@ export default function SideBar() {
             History
           </div>
         </Link>
-        <Link to="/">
-          {" "}
-          <div className="sidebar-chips">
-            <FaIcons.FaUserCircle className="icons sidebar-icons" />
-            Logout
-          </div>
-        </Link>
+        
       </div>
     </div>
   );
