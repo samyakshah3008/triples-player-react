@@ -31,8 +31,8 @@ a {
 
 .video-container {
   color: var(--white-text);
-  height: 90vh;
   display: flex;
+  position: relative;
 }
 
 .page-title {
@@ -73,4 +73,10 @@ a {
   color: var(--primary-color);
   margin-right: 0.6rem;
   cursor: pointer;
+}
+
+.icon-outline-blue {
+  color: var(--primary-color);
+  cursor: pointer;
+
 }
