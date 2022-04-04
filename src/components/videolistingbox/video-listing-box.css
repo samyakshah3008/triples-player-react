@@ -5,3 +5,38 @@
     flex-wrap: wrap;
 
 }
+
+.chips-container {
+    width: 94%;
+    height: 4rem;
+    margin-top: 2rem;
+    background-color: var(--video-bg);
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    gap: 2rem;
+    padding: 0.7rem;
+}
+
+.chips {
+    border: none;
+    background-color: var(--secondary-text-color);
+    color: var(--white-text);
+    border-radius: 10rem;
+    padding: .8rem 2.6rem;
+    cursor: pointer;
+    transition: 0.3s;
+
+
+}
+
+.chips:hover {
+    background-color: var(--primary-color);
+    transition: 0.6s;
+}
+
+.chip-active {
+    background-color: var(--primary-color);
+
+}

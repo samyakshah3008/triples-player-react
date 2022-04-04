@@ -5,8 +5,9 @@
     flex-direction: column;
     gap: 30px;
     font-size: 1.2rem;
-    height: 90vh;
+    height: 100vh;
     padding: 2rem;
-    max-height: auto;
+    position: sticky;
+    top: 0;
 
 }
