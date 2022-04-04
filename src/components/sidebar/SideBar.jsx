@@ -4,7 +4,7 @@ import "./sidebar.css";
 import * as FaIcons from "react-icons/fa";
 export default function SideBar() {
   return (
-    <div>
+  
       <div className="sidebar-container">
         <Link to="/videolisting">
           {" "}
@@ -49,6 +49,6 @@ export default function SideBar() {
         </Link>
         
       </div>
-    </div>
+    
   );
 }
