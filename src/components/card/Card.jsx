@@ -6,12 +6,14 @@ import axios from "axios";
 import { useAuth } from "../../contexts/auth-context";
 import { useWatchLater } from "../../contexts/watch-later-context";
 import { useEffect } from "react";
+// import ReactPlayer from "react-player/youtube";
 
 export default function Card({ item, isLike, isWatchLater }) {
   const { like, setLike } = useLike();
   const { user } = useAuth();
   const { watchLater, setWatchLater } = useWatchLater();
 
+  
   useEffect(() => {
     user.token
       ? (async () => {
@@ -63,6 +65,25 @@ export default function Card({ item, isLike, isWatchLater }) {
     }
   };
 
+  useEffect(() => {
+    user.token
+      ? (async () => {
+          try {
+            const responseFromServerLike = await axios.get("/api/user/likes", {
+              headers: { authorization: user.token },
+            });
+
+            if (responseFromServerLike.status === 200) {
+              setLike({ like: responseFromServerLike.data.likes });
+            }
+          } catch (err) {
+            console.error("error", err);
+          }
+        })()
+      : setLike({ like: [] });
+  }, []);
+
+
   const moveToWatchLaterHandler = async () => {
     try {
       const watchLaterData = await axios({
@@ -92,14 +113,27 @@ export default function Card({ item, isLike, isWatchLater }) {
     }
   };
 
+  const iFrame = (videoId) => {
+    return (
+      <iframe style={{display: "block", width: "100%"}}  src={`https://www.youtube.com/embed/${videoId}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
+    )
+  }
+
+  const videoIframe = iFrame(item._id)
+
   return (
     <div>
       <div className="parent">
         <div className="card-container">
           <div className="card-img-container">
-            {/* <video controls> <source src= {item.videoLink} type = "video/mp4"/>  </video> */}
-            <img className="card-img" src={item.cardImg} alt="cricket-ball" />
+          {videoIframe} 
+{/* 
+          <ReactPlayer  style={{display: "block"}} url={`https://www.youtube.com/embed/${item._id}`} controls width= "100%" height = "100%"  /> */}
+           
+            {/* <img className="card-img" src={item.cardImg} alt="cricket-ball" /> */}
           </div>
+
           <div className="card-sub-container">
             <img src={item.cardImg} className="avatar-img"></img>
             <div className="card-title"> {item.cardTitle} </div>
