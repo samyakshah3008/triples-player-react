@@ -16,16 +16,7 @@ export const videos = [
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore ut voluptatem doloribus et? Mollitia, dolores minus quidem suscipit distinctio et!",
   },
-  {
-    _id: "SodVhwB6Sz8",
-    videoLink: "https://www.youtube.com/watch?v=SodVhwB6Sz8",
-    categoryName: "Comedy",
-    cardImg: "https://img.youtube.com/vi/SodVhwB6Sz8/hqdefault.jpg",
-    cardTitle: "Golmaal",
-    cardOwner: "Samyak Shah",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore ut voluptatem doloribus et? Mollitia, dolores minus quidem suscipit distinctio et!",
-  },
+
   {
     _id: "iGfT6rdTS34",
     videoLink: "https://www.youtube.com/watch?v=iGfT6rdTS34",
@@ -36,16 +27,7 @@ export const videos = [
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore ut voluptatem doloribus et? Mollitia, dolores minus quidem suscipit distinctio et!",
   },
-  {
-    _id:"LXXkiUKDK4w",
-    videoLink: "https://www.youtube.com/watch?v=LXXkiUKDK4w",
-    categoryName: "Comedy",
-    cardImg: "https://img.youtube.com/vi/LXXkiUKDK4w/hqdefault.jpg",
-    cardTitle: "Entertainment",
-    cardOwner: "Samyak Shah",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore ut voluptatem doloribus et? Mollitia, dolores minus quidem suscipit distinctio et!",
-  },
+
   {
     _id: "tPXYWRGNl7s",
     videoLink: "https://www.youtube.com/watch?v=tPXYWRGNl7s",
