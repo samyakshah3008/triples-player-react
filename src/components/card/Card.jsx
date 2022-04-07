@@ -6,14 +6,16 @@ import axios from "axios";
 import { useAuth } from "../../contexts/auth-context";
 import { useWatchLater } from "../../contexts/watch-later-context";
 import { useEffect } from "react";
-// import ReactPlayer from "react-player/youtube";
+import { useHistory } from "../../contexts/history-context";
+import { useNavigate } from "react-router-dom";
 
 export default function Card({ item, isLike, isWatchLater }) {
   const { like, setLike } = useLike();
   const { user } = useAuth();
   const { watchLater, setWatchLater } = useWatchLater();
+  const { history, setHistory } = useHistory();
+  const navigate = useNavigate();
 
-  
   useEffect(() => {
     user.token
       ? (async () => {
@@ -33,8 +35,6 @@ export default function Card({ item, isLike, isWatchLater }) {
   }, []);
 
   const likeHandler = async () => {
-    // console.log(like)
-
     try {
       const likeResponse = await axios({
         method: "post",
@@ -43,8 +43,6 @@ export default function Card({ item, isLike, isWatchLater }) {
         data: { video: item },
       });
       setLike({ like: likeResponse.data.likes });
-
-      // console.log(likeResponse.data.likes)
     } catch (error) {
       console.log(error);
     }
@@ -83,6 +81,26 @@ export default function Card({ item, isLike, isWatchLater }) {
       : setLike({ like: [] });
   }, []);
 
+  useEffect(() => {
+    user.token
+      ? (async () => {
+          try {
+            const responseFromServerHistory = await axios.get(
+              "/api/user/history",
+              {
+                headers: { authorization: user.token },
+              }
+            );
+
+            if (responseFromServerHistory.status === 200) {
+              setHistory({ history: responseFromServerHistory.data.history });
+            }
+          } catch (err) {
+            console.error("error", err);
+          }
+        })()
+      : setHistory({ history: [] });
+  }, []);
 
   const moveToWatchLaterHandler = async () => {
     try {
@@ -113,31 +131,37 @@ export default function Card({ item, isLike, isWatchLater }) {
     }
   };
 
-  const iFrame = (videoId) => {
-    return (
-      <iframe style={{display: "block", width: "100%"}}  src={`https://www.youtube.com/embed/${videoId}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-
-    )
-  }
-
-  const videoIframe = iFrame(item._id)
+  const moveToHistoryHandler = async () => {
+    try {
+      const moveToHistoryResponse = await axios({
+        method: "post",
+        url: "/api/user/history",
+        headers: { authorization: user.token },
+        data: { video: item },
+      });
+      setHistory({ history: moveToHistoryResponse.data.history });
+    } catch (error) {
+      console.log(error);
+    }
+    navigate(`/videolisting/${item._id}`);
+  };
 
   return (
     <div>
       <div className="parent">
         <div className="card-container">
           <div className="card-img-container">
-          {videoIframe} 
-{/* 
-          <ReactPlayer  style={{display: "block"}} url={`https://www.youtube.com/embed/${item._id}`} controls width= "100%" height = "100%"  /> */}
-           
-            {/* <img className="card-img" src={item.cardImg} alt="cricket-ball" /> */}
+            <img
+              onClick={moveToHistoryHandler}
+              className="card-img"
+              src={item.cardImg}
+              alt="cricket-ball"
+            />
           </div>
 
           <div className="card-sub-container">
             <img src={item.cardImg} className="avatar-img"></img>
             <div className="card-title"> {item.cardTitle} </div>
-            {/* <FaIcons.FaTrash className="icons" /> */}
             {isLike ? (
               <FaIcons.FaThumbsUp
                 onClick={removeLikeHandler}
