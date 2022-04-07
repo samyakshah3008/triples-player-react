@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/auth-context";
+import { useHistory } from "../../contexts/history-context";
 import { useLike } from "../../contexts/like-context";
 import { useWatchLater } from "../../contexts/watch-later-context";
 import "./navbar.css";
@@ -10,12 +11,13 @@ export default function Navbar() {
   const navigate = useNavigate();
   const { like, setLike } = useLike();
   const { watchLater, setWatchLater } = useWatchLater();
+  const {setHistory} = useHistory()
 
   const logoutHandler = () => {
     setUser({ token: null });
     setLike({ like: [] });
     setWatchLater({ watchLater: [] });
-
+    setHistory({history: []})
     navigate("/");
   };
 

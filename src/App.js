@@ -9,6 +9,9 @@ import PlaylistPage from "./pages/playlist/PlaylistPage";
 import Watchlaterpage from "./pages/watchlaterpage/Watchlaterpage";
 import LoginPage from "./pages/loginpage/LoginPage";
 import Signuppage from "./pages/signuppage/Signuppage";
+import SingleVideoPage from "./pages/singlevideopage/SingleVideoPage";
+import Mockman from "mockman-js";
+
 function App() {
   return (
     <div className="App">
@@ -21,6 +24,11 @@ function App() {
         <Route path="/watchlater" element={<Watchlaterpage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/signup" element={<Signuppage />}></Route>
+        <Route
+          path="/videolisting/:videoId"
+          element={<SingleVideoPage />}
+        ></Route>
+        <Route path="/mockman" element={<Mockman />}></Route>
       </Routes>
     </div>
   );
