@@ -3,6 +3,11 @@ import axios from "axios";
 
 const CreateVideo = createContext();
 
+export const useSingleVideo = (videoId) => {
+  const { videoList } = useVideoList();
+  return videoList.find((item) => item._id === videoId);
+};
+
 const VideoProvider = ({ children }) => {
   const [videoList, setVideoList] = useState([]);
 
