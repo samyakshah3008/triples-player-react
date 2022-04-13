@@ -40,3 +40,81 @@
     background-color: var(--primary-color);
 
 }
+
+.btn {
+    font-weight: 500;
+    font-size: 1.3rem;
+    padding: 0.8em 1.5em;
+    border-radius: 3px;
+    border: none;
+    transition: 0.3s all;
+    cursor: pointer;
+}
+.main-container-header .btn-primary {
+    padding: 0.8rem 1rem;
+    border-radius: 10rem;
+  }
+  
+  .main-container-header .btn-primary .icons{
+    color: var(--white-text);
+    margin-right: .5rem;
+  }
+  
+  .create-playlist-modal-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #040c1d9b;
+  }
+  
+  .create-playlist-modal {
+    border-radius: 0.5rem;
+    width: 15rem;
+    background-color: var(--white-text);
+    padding: 1.1rem;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+
+  }
+  
+  .create-playlist-modal .btn-playlist-create{
+      width: 100%;
+      border: 0;
+      cursor: pointer;
+      background-color: var(--primary-color);
+      padding: 0.7rem;
+  }
+  .create-playlist-modal .icon-circle-plus{
+      margin-right: .5rem;
+      cursor: pointer;
+  }
+  
+  .modal-close-button{
+      padding: .5rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+  }
+
+.text-sm{
+    color: black;
+}
+
+.input{
+    height: 2.5rem;
+    padding: 0.6rem;
+    outline-color: var(--primary-color);
+    border: none;
+    width: 100%;
+}
+  

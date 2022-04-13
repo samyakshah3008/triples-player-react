@@ -1,0 +1,17 @@
+.flex-display {
+    display: flex;
+}
+
+.back-btn {
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--white-text);
+    border-radius: 10rem;
+    padding: .8rem 2.6rem;
+    cursor: pointer;
+
+}
+
+.nav-margin-top {
+    margin-top: 1rem;
+}
