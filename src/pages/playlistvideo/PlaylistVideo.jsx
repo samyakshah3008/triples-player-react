@@ -1,11 +1,12 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { usePlaylist } from "../../contexts/playlist-context";
 import "../../components/card/card.css";
 import * as FaIcons from "react-icons/fa";
 import { useAuth } from "../../contexts/auth-context";
 import axios from "axios";
 import "./playlistvideo.css";
+import Navbar from "../../components/navbar/Navbar";
 
 export default function PlaylistVideo() {
   const { playlistId } = useParams();
@@ -33,6 +34,12 @@ export default function PlaylistVideo() {
 
   return (
     <div>
+      <Navbar />
+      <div className="nav-margin-top">
+        <Link className="back-btn" to="/playlist">
+          Back to playlist
+        </Link>
+      </div>
       <div className="parent flex-display">
         {playlist[0].videos.map((item) => (
           <div className="card-container">
