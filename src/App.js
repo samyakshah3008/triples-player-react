@@ -11,6 +11,8 @@ import LoginPage from "./pages/loginpage/LoginPage";
 import Signuppage from "./pages/signuppage/Signuppage";
 import SingleVideoPage from "./pages/singlevideopage/SingleVideoPage";
 import Mockman from "mockman-js";
+import { Playlistmodal } from "./components/playlistmodal/Playlistmodal";
+import PlaylistVideo from "./pages/playlistvideo/PlaylistVideo";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
           path="/videolisting/:videoId"
           element={<SingleVideoPage />}
         ></Route>
+        <Route path="/playlistmodaldemo" element={<Playlistmodal />}></Route>
+        <Route path="/playlist/:playlistId" element={<PlaylistVideo />}></Route>
         <Route path="/mockman" element={<Mockman />}></Route>
       </Routes>
     </div>
