@@ -7,6 +7,7 @@ import "./playlistbox.css";
 
 export default function Playlistbox() {
   const [createPlaylistModal, setCreatePlaylistModal] = useState(false);
+  const [playlistName, setPlaylistName] = useState({ playlistName: "" });
 
   const playlistHandler = () => {
     setCreatePlaylistModal(false);
