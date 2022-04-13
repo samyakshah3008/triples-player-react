@@ -5,9 +5,10 @@ import { useLike } from "../../contexts/like-context";
 import axios from "axios";
 import { useAuth } from "../../contexts/auth-context";
 import { useWatchLater } from "../../contexts/watch-later-context";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useHistory } from "../../contexts/history-context";
 import { useNavigate } from "react-router-dom";
+import { usePlaylist } from "../../contexts/playlist-context";
 
 export default function Card({ item, isLike, isWatchLater }) {
   const { like, setLike } = useLike();
@@ -146,6 +147,12 @@ export default function Card({ item, isLike, isWatchLater }) {
     navigate(`/videolisting/${item._id}`);
   };
 
+  const { createPlaylistModal, setCreatePlaylistModal } = usePlaylist();
+
+  const playlistHandler = () => {
+    setCreatePlaylistModal(item);
+  };
+
   return (
     <div>
       <div className="parent">
@@ -186,7 +193,10 @@ export default function Card({ item, isLike, isWatchLater }) {
               />
             )}
 
-            <FaIcons.FaFolderPlus className="icons sidebar-icons" />
+            <FaIcons.FaFolderPlus
+              onClick={playlistHandler}
+              className="icons sidebar-icons"
+            />
           </div>
           <div className="card-sub-container2">
             <div className="card-channel-name"> {item.cardOwner} </div>
