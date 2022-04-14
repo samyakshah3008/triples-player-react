@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/auth-context";
 import * as FaIcons from "react-icons/fa";
+import landingpage from "../../assets/MLP.jpg";
 
 import axios from "axios";
 import { usePlaylist } from "../../contexts/playlist-context";
@@ -35,7 +36,7 @@ export default function PlaylistCard({ playlistInfo }) {
             <img
               onClick={newHandler}
               className="card-img"
-              src="https://res.cloudinary.com/dhqxln7zi/image/upload/v1648118531/new_vohp8t.jpg"
+              src={landingpage}
               alt="cricket-ball"
             />
           </div>
