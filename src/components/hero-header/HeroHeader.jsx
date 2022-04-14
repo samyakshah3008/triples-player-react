@@ -4,9 +4,7 @@ import { useAuth } from "../../contexts/auth-context";
 import "./heroheader.css";
 
 export default function HeroHeader() {
-  const watchNowHandler = () => {
-    console.log("clicked");
-  };
+  const { user } = useAuth();
 
   return (
     <div>
@@ -16,12 +14,17 @@ export default function HeroHeader() {
         <p className="header-description">
           TripleS is platform for free movie watching
         </p>
-        <Link to="/videolisting">
-          {" "}
-          <button onClick={watchNowHandler} className="watch-now-btn">
-            Watch now
-          </button>
-        </Link>
+        {user.token ? (
+          <Link to="/videolisting">
+            {" "}
+            <button className="watch-now-btn">Watch now</button>
+          </Link>
+        ) : (
+          <Link to="/login">
+            {" "}
+            <button className="watch-now-btn">Watch now</button>
+          </Link>
+        )}
       </div>
     </div>
   );
